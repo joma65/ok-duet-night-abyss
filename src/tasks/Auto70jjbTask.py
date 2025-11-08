@@ -64,15 +64,12 @@ class Auto70jjbTask(DNAOneTimeTask, CommissionsTask, BaseCombatTask):
                         _wave = self.current_wave
                         _wave_start = time.time()
                         _wait_next_wave = False
-
+                    _skill_time = self.use_skill(_skill_time)
                     if not _wait_next_wave and time.time() - _wave_start >= self.config.get('波次超时时间', 120):
                         self.log_info('任务超时')
                         self.open_in_mission_menu()
                         self.sleep(0.5)
-                        _wait_next_wave = True
-
-                    if not _wait_next_wave:
-                        _skill_time = self.use_skill(_skill_time)
+                        _wait_next_wave = True                       
             
             _status = self.handle_mission_interface(stop_func=self.stop_func)
             if _status == Mission.START or _status == Mission.STOP:
@@ -129,11 +126,10 @@ class Auto70jjbTask(DNAOneTimeTask, CommissionsTask, BaseCombatTask):
     
     def reset_and_transport(self):
         self.open_in_mission_menu()
-        self.sleep(0.5)
-        self.click(0.73, 0.92, after_sleep=0.5)
-        self.click(0.35, 0.03, after_sleep=0.5)
-        self.click(0.35, 0.03, after_sleep=0.5)
-        self.click(0.60, 0.32, after_sleep=0.5)
+        self.sleep(0.8)
+        self.click(0.73, 0.92, after_sleep=0.8)
+        self.click(0.35, 0.03, after_sleep=0.8)
+        self.click(0.60, 0.32, after_sleep=0.8)
         self.click(0.59, 0.56, after_sleep=1)
         
     def walk_to_aim(self):   
@@ -154,10 +150,15 @@ class Auto70jjbTask(DNAOneTimeTask, CommissionsTask, BaseCombatTask):
             self.sleep(23)
             self.send_key_up('w')
             self.sleep(0.2)
-            #分支1直接到达，分支2继续往前走，复位不可
-            if self.find_next_hint(0.46,0.37,0.51,0.41,r'保护目标'):               
+            #分支1直接到达，未到达则进入分支2继续往前走
+            start = time.time()
+            self.current_wave = -1
+            while self.current_wave == -1 and time.time() - start < 2:
+                self.get_wave_info()
+                self.sleep(0.2) 
+            if self.current_wave == -1:
                 self.send_key_down('w')
-                self.sleep(7.5)
+                self.sleep(6)
                 self.send_key('space', down_time=0.2, after_sleep=2.7)
                 self.send_key_up('w')
             return             
