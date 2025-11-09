@@ -105,11 +105,10 @@ config = {
     },
     'links': { # 关于里显示的链接, 可选
             'default': {
-                'github': 'https://github.com/ok-oldking/ok-script-boilerplate',
-                'discord': 'https://discord.gg/vVyCatEBgA',
-                'sponsor': 'https://www.paypal.com/ncp/payment/JWQBH7JZKNGCQ',
-                'share': 'Download from https://github.com/ok-oldking/ok-script-boilerplate',
-                'faq': 'https://github.com/ok-oldking/ok-script-boilerplate'
+                'github': 'https://github.com/BnanZ0/ok-duet-night-abyss',
+                'qq_group': 'https://qm.qq.com/q/iF3bfUflY',
+                'qq_channel': 'https://pd.qq.com/s/djmm6l44y',
+                'faq': 'https://cnb.cool/BnanZ0/ok-duet-night-abyss/-/blob/master/README.md'
             }
         },
     'screenshots_folder': "screenshots", #截图存放目录, 每次重新启动会清空目录
