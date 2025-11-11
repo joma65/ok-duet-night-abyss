@@ -12,7 +12,7 @@ class AutoCombatTask(BaseListenerTask, BaseCombatTask, TriggerTask):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.name = "自动战斗"
-        self.description = "需使用鼠标侧键主动激活"
+        self.description = "需主动激活"
         self.setup_listener_config()
         self.default_config.update({
             "技能": "普攻",

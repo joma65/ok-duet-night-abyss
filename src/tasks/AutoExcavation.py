@@ -18,6 +18,9 @@ class AutoExcavation(DNAOneTimeTask, CommissionsTask, BaseCombatTask):
         self.icon = FluentIcon.FLAG
         self.name = "自动勘察"
         self.description = "半自动"
+        self.group_name = "半自动"
+        self.group_icon = FluentIcon.VIEW
+
         self.default_config.update({
             '轮次': 3,
         })

@@ -1,3 +1,4 @@
+from qfluentwidgets import FluentIcon
 import time
 import cv2
 
@@ -17,6 +18,8 @@ class AutoFishTask(DNAOneTimeTask, BaseDNATask):
         super().__init__(*args, **kwargs)
         self.name = "自动钓鱼"
         self.description = "无悠闲全自动钓鱼 (原作者: B站无敌大蜜瓜)，如果识别不到鱼条修改配置降低面积要求"
+        self.group_name = "全自动"
+        self.group_icon = FluentIcon.CAFE
 
         # 默认配置（会被 configs/AutoFishTask.json 覆盖）
         self.default_config.update(

@@ -20,7 +20,9 @@ class Auto65ArtifactTask_Fast(DNAOneTimeTask, CommissionsTask, BaseCombatTask):
         self.icon = FluentIcon.FLAG
         self.name = "自动30/65级魔之楔本"
         self.description = "全自动"
-
+        self.group_name = "全自动"
+        self.group_icon = FluentIcon.CAFE
+        
         self.default_config.update({
             "刷几次": 999,
         })

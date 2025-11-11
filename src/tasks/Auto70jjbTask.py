@@ -21,7 +21,9 @@ class Auto70jjbTask(DNAOneTimeTask, CommissionsTask, BaseCombatTask):
         self.icon = FluentIcon.FLAG
         self.name = "自动70级皎皎币本"
         self.description = "全自动"
-
+        self.group_name = "全自动"
+        self.group_icon = FluentIcon.CAFE
+        
         self.default_config.update({
             '轮次': 1,
         })

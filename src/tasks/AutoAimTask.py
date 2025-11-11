@@ -17,7 +17,7 @@ class AutoAimTask(BaseListenerTask, BaseCombatTask, TriggerTask):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.name = "自动花序弓蓄力瞄准"
-        self.description = "可使用鼠标右键或侧键主动激活，运行中可使用右键或左键打断"
+        self.description = "需主动激活，运行中可使用右键或左键打断"
         self.setup_listener_config()
         self.default_config.update(
             {

@@ -17,6 +17,8 @@ class AutoExpulsion(DNAOneTimeTask, CommissionsTask, BaseCombatTask):
         self.icon = FluentIcon.FLAG
         self.name = "自动驱离"
         self.description = "全自动"
+        self.group_name = "全自动"
+        self.group_icon = FluentIcon.CAFE
 
         self.default_config.update({
             '随机游走': False,

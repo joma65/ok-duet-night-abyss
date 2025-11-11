@@ -14,7 +14,7 @@ class AutoMoveTask(BaseListenerTask, BaseDNATask, TriggerTask):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.name = "自动穿引共鸣"
-        self.description = "需使用鼠标侧键主动激活，运行中也可使用左键打断"
+        self.description = "需主动激活，运行中也可使用左键打断"
         self.setup_listener_config()
         self.default_config.update({
             '按下时间': 0.50,
