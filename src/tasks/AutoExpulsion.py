@@ -56,8 +56,7 @@ class AutoExpulsion(DNAOneTimeTask, CommissionsTask):
                 if time.time() - _start_time >= self.config.get("任务超时时间", 120):
                     logger.info("已经超时，重开任务...")
                     self.give_up_mission()
-                    self.sleep(1)
-                    self.wait_until(lambda: not self.in_team(), time_out=30)
+                    self.wait_until(lambda: not self.in_team(), time_out=30, settle_time=1)
 
             _status = self.handle_mission_interface()
             if _status == Mission.START:

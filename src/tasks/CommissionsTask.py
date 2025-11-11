@@ -135,6 +135,7 @@ class CommissionsTask(BaseCombatTask):
             time_out=action_timeout,
             raise_if_not_found=True,
         )
+        self.sleep(2)
 
     def continue_mission(self, timeout=10):
         if self.in_team():
@@ -312,7 +313,6 @@ class CommissionsTask(BaseCombatTask):
             return
         elif self.find_esc_menu():
             self.give_up_mission()
-            self.sleep(2)
             return Mission.GIVE_UP
         return False
 
