@@ -31,7 +31,7 @@ class CommissionsTask(BaseDNATask):
             "启用自动穿引共鸣": True,
             "发出声音提醒": True,
             "自动选择首个密函和密函奖励": True,
-            "优先选择持有数为0的密函奖励": True,
+            "优先选择持有数为0的密函奖励": False,
         })
         self.config_description.update({
             "超时时间": "超时后将重启任务",
