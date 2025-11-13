@@ -56,6 +56,9 @@ class CommissionsTask(BaseDNATask):
 
     def find_bottom_start_btn(self, threshold = 0):
         return self.find_start_btn(threshold=threshold, box=self.box_of_screen_scaled(2560, 1440, 2094, 1262, 2153, 1328, name="start_mission", hcenter=True))
+    
+    def find_big_bottom_start_btn(self, threshold = 0):
+        return self.find_start_btn(threshold=threshold, box=self.box_of_screen_scaled(2560, 1440, 1667, 1259, 1728, 1328, name="start_mission", hcenter=True))
 
     def find_letter_btn(self, threshold = 0):
         return self.find_start_btn(threshold=threshold, box=self.box_of_screen_scaled(2560, 1440, 1630, 852, 1884, 920, name="letter_btn", hcenter=True))
@@ -91,7 +94,7 @@ class CommissionsTask(BaseDNATask):
         action_timeout = self.safe_get("action_timeout", timeout)
         start_time = time.time()
         while time.time() - start_time < action_timeout:
-            if btn := self.find_bottom_start_btn() or self.find_retry_btn():
+            if btn := self.find_retry_btn() or self.find_bottom_start_btn() or self.find_big_bottom_start_btn():
                 self.move_mouse_to_safe_position()
                 self.click_box(btn, after_sleep=0)
                 self.move_back_from_safe_position()
@@ -308,7 +311,7 @@ class CommissionsTask(BaseDNATask):
             self.choose_drop_rate()
             return self.get_return_status()
 
-        if self.find_bottom_start_btn() or self.find_retry_btn():
+        if self.find_retry_btn() or self.find_bottom_start_btn() or self.find_big_bottom_start_btn():
             self.start_mission()
             self.mission_status = Mission.START
             return
