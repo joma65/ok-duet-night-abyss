@@ -301,7 +301,7 @@ class CommissionsTask(BaseDNATask):
 
     def create_jiggle_ticker(self, interval=1.0):
         def action():
-            for _ in range(1):
+            for _ in range(2):
                 self.send_key("s")
                 self.sleep(0.5)
                 self.send_key("w")
