@@ -5,7 +5,7 @@ from ok import Logger, TaskDisabledException
 from src.tasks.DNAOneTimeTask import DNAOneTimeTask
 from src.tasks.CommissionsTask import CommissionsTask, Mission
 from src.tasks.BaseCombatTask import BaseCombatTask
-from src.tasks.trigger.AutoWheelTask import AutoWheelTask
+from src.tasks.trigger.AutoRouletteTask import AutoRouletteTask
 
 logger = Logger.get_logger(__name__)
 
@@ -60,7 +60,7 @@ class AutoMeditation(DNAOneTimeTask, CommissionsTask, BaseCombatTask):
         _count = 0
         _macro_executed = False  
         if self.wheel_task is None:
-            self.wheel_task = self.get_task_by_class(AutoWheelTask)
+            self.wheel_task = self.get_task_by_class(AutoRouletteTask)
         if self.in_team():
             self.log_info("检测到已在队伍中，先放弃当前任务")
             self.give_up_mission()
