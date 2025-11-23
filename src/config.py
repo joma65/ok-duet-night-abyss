@@ -157,6 +157,8 @@ config = {
         ["src.tasks.fullauto.AutoEscortTask", "AutoEscortTask"],
         ["src.tasks.fullauto.Auto65ArtifactTask_Fast", "Auto65ArtifactTask_Fast"],
         ["src.tasks.fullauto.Auto70jjbTask", "Auto70jjbTask"],
+        ["src.tasks.fullauto.AutoMeditation", "AutoMeditation"],
+        ["src.tasks.fullauto.AutoFishMultiSpotTask", "AutoFishMultiSpotTask"],
         ["src.tasks.fullauto.ImportTask", "ImportTask"],
         ["src.tasks.AutoSkill", "AutoSkill"],
         ["src.tasks.AutoGeneral", "AutoGeneral"],
