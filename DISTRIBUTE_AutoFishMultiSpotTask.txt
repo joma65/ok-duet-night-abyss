@@ -1,0 +1,43 @@
+Auto Fish Multi Spot Task - Distribution Package
+================================================
+
+What's Included:
+----------------
+1. AutoFishMultiSpotTask.py - The main task file
+2. mod/fish/ folder - Contains all required image files for navigation and fishing detection
+
+How to Install:
+---------------
+1. Copy AutoFishMultiSpotTask.py to your ok-dna folder:
+   [your ok-dna folder]/src/tasks/fullauto/AutoFishMultiSpotTask.py
+
+2. Copy the mod/fish/ folder to your ok-dna folder:
+   [your ok-dna folder]/mod/fish/
+   
+   Make sure all the PNG files are in there.
+
+3. Restart ok-dna and the task will appear in your task list.
+
+Screen Resolution:
+------------------
+This task uses image recognition for navigation, so it should work at different resolutions. However, 1920x1080 is recommended for best results since the images were captured at that resolution. If you're using a different resolution, the images might not match perfectly and navigation could fail.
+
+What's New:
+-----------
+- Everything's in one file - no need for separate AutoFishTask.py
+- Real-time fish count updates
+- Select which fishing spots to visit - enable/disable Purgatorio, Icelake, or Sewers in the config
+- Image-based navigation - uses image recognition instead of hardcoded coordinates
+- Map recognition - automatically detects when maps load (Purgatorio and Icelake)
+- Sewers optimized - only waits 5 seconds after teleport
+- Auto-return to Purgatorio - teleports back and AFKs after all spots are done
+- Stats persist - all fishing stats remain visible after task completes or stops
+
+Config Options:
+--------------
+- Max Rounds Per Spot: How many fish to catch per spot (0 = unlimited)
+- Enable Purgatorio/Icelake/Sewers: Checkboxes to enable/disable each spot
+- END_WAIT_SPACE: Wait time after catching a fish (default 0.5 seconds)
+- MAX_START_SEC/MAX_FIGHT_SEC/MAX_END_SEC: Timeouts for each fishing phase
+
+That's it! Extract the zip, copy the files over, and restart ok-dna. If you run into issues, make sure all the PNG files are in the mod/fish folder.
